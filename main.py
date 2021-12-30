@@ -1,6 +1,6 @@
 from flask import Flask , render_template
 
-app = Flask("Name")
+app = Flask(__name__)
 
 @app.route("/")
 def homepage():
@@ -11,4 +11,4 @@ def usuarios(nome_usuario):
 	return render_template("usuarios.html", nome_usuario = nome_usuario) ######usar no html com {{ nome_usuario }}
 
 if __name__ == "__main__":
-	app.run(debug=True, host='0.0.0.0')
+	app.run(debug=True)
